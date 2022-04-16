@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card course-details entry-details">
+    <p class="card-text btn-btn-primary"><mark class="course-name">University</mark><br> &emsp;&emsp;&emsp;  {{entry.university}}</p>
+   <h2 class="category-name-cap"><mark class="course-name">Course</mark><br> &emsp;&emsp;&emsp;    {{entry.course}}</h2><br>
+    <h3 class="card-text"><mark class="course-name">Cut_off_points</mark><br><h2 >&emsp;&emsp;&emsp;   {{entry.cut_off}}</h2></h3><br>
+    {% if request.user.is_superuser %}
+    <a href="{% url 'course:entry_edit' entry.pk %}"><button class="text-white  btn btn-success course-name">+ Edit {{entry.name}} from {{entry.university}}</button></a><br>
+    <a  href="{% url 'course:entry_delete' entry.pk %}"><button class="text-white btn btn-danger course-name" >+ delete {{entry.name}} from {{entry.university}}</button></a>
+    {%endif%}
+    </div>
+</div>
+{% endblock  %}
+

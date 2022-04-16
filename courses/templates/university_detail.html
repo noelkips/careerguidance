@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="course-details">
+    <div class ="card text-white bg-secondary mb-3 sm-3" style="width:630px;">
+            <img src="{{ university.image.url }}" alt="university image" height="400px" width="100%">
+            <h2 class="category-name-cap"><mark>Name</mark> : {{university.name}}</h2><br>
+            <h3 class="card-text"><mark>category</mark>:    {{university.category}}</h3><br>
+            <div id="university-p">
+                <p class="card-text"><mark>Location</mark>:  {{university.location}}</p>
+            </div>
+            <button class="btn btn-indigo btn-rounded btn-md">
+                <a href="{{university.about}}" target="_blank" class="btn btn-primary"> <h2 class="course-name">Visit {{university.name}} website</h2></a>
+            </button><br>
+             {% if request.user.is_superuser %}
+            <a href="{% url 'course:university_edit' university.pk %}"><button class="text-white  btn btn-success">+ Edit {{university.name}} university</button></a>
+            <a  href="{% url 'course:university_delete' university.pk %}"><button class="text-white btn btn-danger" >+ delete {{university.name}} university</button></a>
+            {%endif%}
+</div>
+</div>
+
+{% endblock  %}
+

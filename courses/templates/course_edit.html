@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="card course-details entry-details course-name">
+     <form action="" method="post">{% csrf_token %}
+    {{form|crispy}}<br>
+    <input class="btn btn-success course-name" type="submit" value="Update" />
+    </form>
+</div>
+{% endblock content %}
+

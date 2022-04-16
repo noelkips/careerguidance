@@ -1,0 +1,54 @@
+
+{% load static %}
+<html>
+<head>
+    <title>career edge</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="brand">
+    <a  href="{% url 'course:courses' %}">
+        <h1 style="margin-left: 5px;">< back to home</h1>
+    </a>
+</div>
+<div class ="login-form qualification-form" >
+         <img src="{% static 'css/images/logo.png' %}" height=" 200px" width="100%"><br>
+        <h1 class="text-blue">Enter your points here </h1>
+        <form action="points" method="post" class="text-align">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group ">
+                    <label >Group 1 SUBJECT:</label>
+                    <input type="number" max="12" min="1"  name="A" class="form-control"  placeholder="Group 1 subjects e.g maths" required>
+                </div><br>
+                <div class="form-group">
+                    <label >Group 2 SUBJECT:</label>
+                    <input type="number" max="12" min="1" name="B" class="form-control"  placeholder="Group 2 subjects e.g english" required>
+                </div>
+                <div class="form-group">
+                    <label >Group 3 SUBJECT:</label>
+                    <input type="number" max="12" min="1" name="C" class="form-control" placeholder="Group 3 subjects e.g chemistry" required>
+                </div>
+                <div class="form-group">
+                    <label >Group 4 SUBJECT:</label>
+                    <input type="number" max="12"  min="1" name="D" class="form-control"  placeholder="Group 4 subjects e.g history" required>
+                </div>
+                <div class="form-group">
+                    <label>Aggregate Points:</label>
+                    <input type="number" max="84" min="45" name="AGR" class="form-control" placeholder="!!The cuf off for university is 45" required>
+                </div>
+            </div><br>
+            <input type="submit" name="my_points" class="btn btn-secondary">
+        </form>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="query-page query-results course">
+<h1 class="course-name"> we recommend the following careers based on your personality</h1>
+    <hr class="hr-style">
+<h1 class="text-blue">{{message}}</h1><br>
+<h1 class="course-name">we recommend the following courses in {{message}} category for you</h1>
+    <hr class="hr-style">
+    <ul style="padding: 30px;">
+        <li><h1>{{course_1}}</h1></li><br>
+        <li><h1>{{course_2}}</h1></li><br>
+        <li><h1>{{course_3}}</h1></li><br>
+        <li><h1>{{course_4}}</h1></li><br>
+        <li><h1>{{course_5}}</h1></li><br>
+        <li><h1>{{course_6}}</h1></li><br>
+        <li><h1>{{course_7}}</h1></li><br>
+        <li><h1>{{course_8}}</h1></li><br>
+        <li><h1>{{course_9}}</h1></li><br>
+        <li><h1>{{course_10}}</h1></li><br>
+
+    </ul>
+
+</div>
+
+{% endblock  %}
+

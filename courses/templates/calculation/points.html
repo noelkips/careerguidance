@@ -1,0 +1,32 @@
+{% load static %}
+<html>
+<head>
+    <title>career edge</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+<div class="brand">
+    <a  href="{% url 'course:courses' %}">
+        <h1 style="margin-left: 5px;">< back to home</h1>
+    </a>
+</div>
+    <div class="login-form qualification-form">
+        <img src="{% static 'css/images/logo.png' %}" height=" 200px" width="100%">
+        <div>
+            <h2 >your cluster points : {{result}}</h2><hr>
+            <bold class="bg-primary">you entered the following</bold><br>
+            <table>
+                <th>Subject</th><th>Points</th>
+                <tr><td>First subject</td><td>{{first_subject}}</td></tr>
+                <tr><td>Second subject</td><td>{{second_subject}}</td></tr>
+                <tr><td>Third subject</td><td>{{third_subject}}</td></tr>
+                <tr><td>Fourth subject</td><td>{{fourth_subject}}</td></tr>
+                <tr><td>Aggregate points</td><td>{{Aggregate_points}}</td></tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

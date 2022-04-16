@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul class="row">
+        <div class="cat-details filter">
+        Filter By<hr>
+         <form method="get">
+             {{ filter.form.as_p }}
+             <button class="btn bg-secondary course-name" type="submit" >Filter</button>
+         </form>
+    </div>
+        {% if request.user.is_superuser %}
+    <div class="cat-details donate admin-add">
+        <a class="small-font" href="{% url 'course:university_new' %}">+Add University</a>
+    </div>
+    {%endif%}
+    {% for university in filter.qs%}
+    <li class="col-auto " >
+        <div class ="card course-name bg-white mb-3 sm-3" style="width: 345px;">
+            {% if university.image %}
+            <img src="{{ university.image.url }}" alt="university image" height="250px" width="100%">
+            {% else %}
+            <p></p>
+            {% endif %}
+            </a>
+            <h2 class="category-name-cap"><h2 class="bg-success" >Name</h2>{{university.name}}</h2><br>
+            <h3 class="card-text"><h2 class="bg-success">category</h2> {{university.category}}</h3><br>
+            <div id="university-p">
+                <p class="card-text"><h2 class="bg-success">Location</h2>{{university.location}}</p>
+            </div>
+            <button class="btn btn-indigo btn-rounded btn-md">
+                <a href="{{university.about}}" target="_blank" class="btn btn-primary"> <h2 class="course-name">Visit {{university.name}} website</h2></a>
+<!--                <a href="{% url 'course:university_detail' university.pk %}" target="_blank" class="btn btn-success"> <h2 class="course-name">see more</h2> </a>-->
+            </button>
+            <hr>
+            {% if request.user.is_superuser %}
+            <a href="{% url 'course:university_edit' university.pk %}"><button class="text-white  btn btn-success">+ Edit university</button></a>
+            <a  href="{% url 'course:university_delete' university.pk %}"><button class="text-white btn btn-danger" >+ delete university</button></a>
+            {%endif%}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock  %}
+
+
+

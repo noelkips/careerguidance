@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="card mb-3 course-details" style="max-width: 767px;">
+    <div class="view overlay" >
+       {% if course.image %}
+            <img class="card-img-top " src="{{ course.image.url }}" alt="course image" height="370px">
+        {% else %}
+        <p></p>
+        {% endif %}
+    </div>
+    <div class="card-body">
+        <h3 class="card-title course-name">{{course.name}}<br></h3>
+        <hr>
+        <h3 class="bg-primary">Category::</h3>  &emsp; &emsp;&emsp;{{course.category}}<br>
+        <hr style="border: blue; border-bottom: 10px;">
+        <h1 class="course-name">Cluster Subjects</h1>
+        <table class="bg-secondary">
+            <tr><td>Group 1 </td><td>{{course.first_sub}}</td></tr>
+            <tr><td>Group 2 </td><td>{{course.second_sub}}</td></tr>
+            <tr><td>Group 3 </td><td>{{course.third_sub}}</td></tr>
+            <tr><td>Group 4 </td><td>{{course.fourth_sub}}</td></tr>
+
+        </table>
+        <hr>
+        <h3 class="bg-primary">updated at:</h3>  &emsp; &emsp;&emsp;{{course.updated_at}}<br>
+        <hr>
+        <h3 class="bg-primary">careers:</h3>  &emsp; &emsp;&emsp;{{course.career}}
+       <hr>
+        <a  href="{% url 'course:courses' %}">&emsp; Back to courses</a>
+         {% if request.user.is_superuser %}
+            <button class="btn btn-success">
+                <a  class="text-white" href="{% url 'course:course_edit' course.pk %}">Edit {{course.name}} course</a>
+            </button>
+            <button class="btn btn-danger">
+                <a  class="text-white" href="{% url 'course:course_delete' course.pk %}">delete {{course.name}} course</a>
+            </button>
+        {%endif%}
+     </div>
+
+
+</div>
+
+{% endblock  %}
+
+
+
+
