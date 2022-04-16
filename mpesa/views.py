@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from .models import MpesaPayment
 
 
-def donate(request):
+def personalInfo(request):
     return render(request, "personal_info.html")
 
 def getAccessToken(request):
@@ -44,7 +44,7 @@ def lipa_na_mpesa_online(request):
     }
 
     response = requests.post(api_url, json=request, headers=headers)
-    return render('donate.html')
+    return render(request, 'donate.html')
 
 
 @csrf_exempt
