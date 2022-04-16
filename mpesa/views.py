@@ -1,5 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
+from matplotlib.style import context
 import requests
 from requests.auth import HTTPBasicAuth
 import json
@@ -44,7 +45,20 @@ def lipa_na_mpesa_online(request):
     }
 
     response = requests.post(api_url, json=request, headers=headers)
-    return render(request, 'donate.html')
+    context = {
+         "BusinessShortCode": LipanaMpesaPpassword.Business_short_code,
+        "Password": LipanaMpesaPpassword.decode_password,
+        "Timestamp": LipanaMpesaPpassword.lipa_time,
+        "TransactionType": "CustomerPayBillOnline",
+        "Amount": amount,
+        "PartyA": phone,  # replace with your phone number to get stk push
+        "PartyB": LipanaMpesaPpassword.Business_short_code,
+        "PhoneNumber": 254719731264,  # replace with your phone number to get stk push
+        "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
+        "AccountReference": "Career Guidance",
+        "TransactionDesc": "Donation to Guidance System"
+    }
+    return render(request, 'donate.html', context)
     # return HttpResponse("Thanks for you support, Complete the transaction by entering your Mpesa pin in the STK push you received")
 
 
