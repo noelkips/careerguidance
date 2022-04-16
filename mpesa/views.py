@@ -9,7 +9,7 @@ from .models import MpesaPayment
 
 
 def personalInfo(request):
-    return render(request, 'personal_info.html')
+    return render(request, 'personal_information.html')
 
 def getAccessToken(request):
     consumer_key = 'DJMmljhEBtqk2SmJ3mG2EGphypZDK3Vd'
@@ -44,7 +44,8 @@ def lipa_na_mpesa_online(request):
     }
 
     response = requests.post(api_url, json=request, headers=headers)
-    return HttpResponse("Thanks for you support  we have receive KSH{Amount} you donated")
+    return render(request, 'donate.html')
+    # return HttpResponse("Thanks for you support  we have receive KSH {Amount} you donated")
 
 
 @csrf_exempt
