@@ -156,7 +156,7 @@ a:hover{
 }
 
 .find-points {
-  background-color: #7f86e9;
+  background-color: #050a5a;
   border: none;
   font-size: 28px;
   width: 250px;
@@ -168,7 +168,7 @@ a:hover{
   position: fixed;
   z-index: 6;
   border-radius: 20px;
-  box-shadow: 10px 10px 15px #494d6d;
+  box-shadow: 10px 10px 15px #010949;
   color: rgb(243, 186, 28);
 }
 .cat-details {
