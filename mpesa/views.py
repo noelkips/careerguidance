@@ -44,8 +44,8 @@ def lipa_na_mpesa_online(request):
     }
 
     response = requests.post(api_url, json=request, headers=headers)
-    # return render(request, 'donate.html')
-    return HttpResponse("Thanks for you support  we have receive KSH{Amount} you donated")
+    return render(request, 'donate.html')
+    # return HttpResponse("Thanks for you support, Complete the transaction by entering your Mpesa pin in the STK push you received")
 
 
 @csrf_exempt
