@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
-from matplotlib.style import context
+# from matplotlib.style import context
 import requests
 from requests.auth import HTTPBasicAuth
 import json
