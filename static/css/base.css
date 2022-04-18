@@ -55,7 +55,7 @@ body{
     display: none; 
 }
 @media (max-width :952px){
-    brand{
+    label.brand{
         font-size: 30px;
         padding-left: 50px;
 
