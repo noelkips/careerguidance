@@ -44,6 +44,54 @@ body{
 .header-links a{
     color: #ffffff;
 }
+.checkbtn{
+     font-size: 30px;
+     color: white;
+     float: right  ;
+     margin-right: 80px;
+     cursor: pointer;
+}
+#check{
+    display: none; 
+}
+@media (max-width :952px){
+    brand{
+        font-size: 30px;
+        padding-left: 50px;
+
+    }
+    .header-links{
+        font-size: 16px;
+    }
+}
+@media (max-width :858px){
+    .checkbtn{
+        display: block;
+    }
+    .header-links{
+        position: fixed;
+        width: 100px;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .header-links a{
+        display: block;
+        font-size: 20px;
+    }
+    a:hover, a.active{
+        background: none;
+        color: #0082e6;
+    }
+    #check:checked ~.header-links{
+        left: 0;
+    }
+}
+
+
 .main{
     grid-area: main;
     padding-top: 23px;
