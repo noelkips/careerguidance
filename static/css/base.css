@@ -219,6 +219,17 @@ a:hover{
 .course-rating{
     margin-bottom: 1rem;
 }
+@media (max-width= 500px){
+    .courses{
+        width: 80%;
+    }
+    .cat-details{
+        margin-top: 30px;
+    }
+    .course-details filter{
+        margin-top: 40px;
+    }
+}
 
 .find-points {
   background-color: #050a5a;
