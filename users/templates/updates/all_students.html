@@ -1,0 +1,59 @@
+{% extends 'base.html'%}
+
+{%block content%}
+
+
+<div class="row">
+<div class="col-12">
+  <div class="card bg-light ms-8 me-8 mb-8 display_2" style="padding: 10px;">
+    <div class="card-header display_2">
+      <i class=""> Registered Users</i><br><hr>
+        <div class=" header-links">
+            <a  class="btn btn-black " href="{% url 'user_new' %}">+ Add User</a>
+        </div>
+    </div>
+    <div class="card-body">
+      <p class="card-text display_2">
+        <div class="table-responsive ">
+          <table class="table table-hover ">
+            <thead>
+              <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Username</th>
+          
+                <th scope="col" colspan="3">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                 <tr>
+                    <td>{{user.first_name}} </td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.username}}</td>
+                   
+                     <td>
+                         <button class="btn btn-black">
+                            <a  class="text-white" href="{% url 'user_edit' slug=user.slug %}">Update</a>
+                        </button></td><td>
+                          <button class="btn btn-success">
+                           <a class="text-white" href="{% url 'password_reset' %}">Reset password</a></h3>
+                        </button></td><td>
+                         <button class="btn btn-secondary">
+                            <a  class="text-white" href="{% url 'user_delete' slug=user.slug %}">Delete</a>
+                        </button>
+                     </td>
+
+                 </tr>
+             {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </p>
+    </div>
+</div>
+
+
+</div>
+</div>
+{%endblock%}

@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content%}
+<section data-bs-version="5.1" class="info4 cid-tohX8Vc78y mbr-parallax-background" id="info4-s">
+    
+
+    
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h3 class="mbr-section-title mbr-fonts-style display-1">
+                    <strong>CAREER EDGE</strong></h3>
+                <p class="mbr-text mbr-fonts-style mb-4 display-5">
+                    We help students find careers that are related to their interest and their qualifications in the Kenya universities and beyond.
+                </p>
+                <div class="link-wrap">
+                    <p class="link mbr-fonts-style mb-4 display-1"><a class="text-primary" href="#" target="_blank"><strong>About us &gt;&gt;</strong></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features4 cid-tmkn3Rbx6V" id="features4-2">
+    
+    <div class="mbr-overlay"></div>
+    <div class="container-fluid">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-1">
+                <strong>Career Types</strong></h4>
+            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7"><em>Right career better life</em></h5>
+        </div>
+        <div class="row mt-4">
+            {% for career in career_types %}
+            <div class="item features-image сol-12 col-md-6 col-lg-4 active">
+                <div class="item-wrapper">
+               
+                    <div class="item-content">
+                            
+                            
+                        <h1 class="mbr-text mbr-fonts-style mt-3 display-4">{{career.name}}</h1>
+                    </div>
+                        <div class="item-content">
+                            
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">{{career.description |truncatechars:175}}</p>
+                        </div>
+                        <div class="mbr-section-btn item-footer mt-2"><a href="{% url 'course:career_type_detail' pk=career.pk %}" class="btn item-btn btn-secondary display-7" target="_blank">Read more &gt;&gt;</a>
+                        </div>
+                </div>
+                </div> {% endfor%}
+            </div>
+           
+           
+          
+            
+
+        </div>
+    </div>
+</section>
+
+{%endblock content%}

@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% block content%}
+ 
+<section data-bs-version="5.1" class="content4 cid-tohWgZ8r7t" id="content4-r">
+
+    
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="title col-md-12 col-lg-10">
+                <i class="text-secondary"><h2>Updated on: {{category.updated_at}}</h2></i>
+                {% if category.image %}
+                <img class="card-img-top " src="{{ category.image.url }}" alt="career image" height="370px">
+                {% else %}
+                <p></p>
+                {% endif %}
+                <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
+                    <strong>{{category.name}}</strong>
+                </h3>
+                <h4 class="mbr-section-subtitle align-center mbr-fonts-style mb-4 display-7">{{category.description}}</h4>
+                
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock%}

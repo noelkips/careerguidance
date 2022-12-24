@@ -1,1 +1,0 @@
-web: gunicorn career_guidance_system.wsgi --log-file -
