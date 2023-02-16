@@ -1,80 +1,84 @@
 {% extends 'base.html' %}
+{%load static%}
 
 {% block content %}
-<ul class="row ">
-    <li>
-        <div class="login-logout-animate">
-            <marquee>
-             {% if request.user.is_superuser %}
-                <p>Hi  {{request.user}}[admin]  </p>
-             {%elif request.user.is_authenticated %}
-                <p>Hi  {{request.user}}</p>
-            {%else%}
-                <p>you are not logged in</p>
-             {%endif%}
+<html lang="en">
 
-            </marquee>
-        </div>
 
-        <div class="cat-detail">
-            <a  class="cat-details" href="{% url 'course:category' %}" target="_blank">
-               Find More<br> About Each <br>Category
-            </a>
-        </div>
-    </li>
-     {% if request.user.is_superuser %}
-    <div class="cat-details donate admin-add">
-        <a class="small-font" href="{% url 'course:course_new' %}">+Add Course</a>
-    </div>
-    {%else%}
-    <div class="cat-details donate admin-add">
-        <a class="small-font" href="{% url 'personalInfo' %}" target="_blank">Donate</a>
-    </div>
-    {% endif%}
+<!-- datatables.html  21 Nov 2019 03:55:21 GMT -->
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>career guidance</title>
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/app.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bundles/datatables/datatables.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bundles/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css' %}">
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/components.css' %}">
+  <!-- Custom style CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
+</head>
 
-   <div class="cat-details filter">
-        Filter By<hr>
-         <form method="get">
-             {{ filter.form.as_p }}
-             <button class="btn bg-secondary course-name" type="submit" >Filter</button>
-         </form>
-    </div>
-    {% for course in filter.qs %}
-    <li class="col-auto courses">
-        <div class ="card bg-white mb-3 sm-3" style="width:339px;">
-            {% if course.image %}
-            <a href="{% url 'course:course_detail' course.pk %}">
-                <img class="card-img-top" src="{{ course.image.url }}" alt="course image" height="250px" width="100%">
-            </a>
-            {% else %}
-                <p></p>
-            {% endif %}
-            <h2 class="category-name-cap course-name">{{course.name}}</h2>
-            <p class="card-text course-university"> Category: {{course.category}}</p>
-            <a href="{% url 'course:course_detail' course.pk %}" class="btn btn-primary">see more</a>
-             {% if request.user.is_superuser %}
-            <button class="btn btn-success">
-                <a  class="text-white" href="{% url 'course:course_edit' course.pk %}">+ Edit course</a>
-            </button>
-            <button class="btn btn-danger">
-                <a  class="text-white" href="{% url 'course:course_delete' course.pk %}">+ delete course</a>
-            </button>
-            {%endif%}
-        </div>
-    </li>
-    {% endfor %}
-</ul>
+<body>
+  <div id="app">
+      <!-- Main Content -->
+      <div class="main-content">
+        <section class="section">
+          <div class="section-body">
+            <div class="row">
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4>Table With State Save</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-hover" id="save-stage" style="width:100%;">
+                        <thead>
+                          <tr>
+                            <th>Course</th>
+                            <th>Category</th>
+                            <th>University</th>
+                            <th>Cut_off</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            {% for course in entries %}
+                          <tr>
+                            <td>{{course.course}}</td>
+                            <td>{{course.course.category}}</td>
+                            <td>{{course.university}}</td>
+                            <td>{{course.cut_off}}</td>
+                          </tr>
+                          {%endfor%}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+  </div>
+  <!-- General JS Scripts -->
+  <script src="{% static 'assets/js/app.min.js' %}"></script>
+  <!-- JS Libraies -->
+  <script src="{% static 'assets/bundles/datatables/datatables.min.js' %}"></script>
+  <script src="{% static 'assets/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js' %}"></script>
+  <script src="{% static 'assets/bundles/jquery-ui/jquery-ui.min.js' %}"></script>
+  <!-- Page Specific JS File -->
+  <script src="{% static 'assets/js/page/datatables.js' %}"></script>
+  <!-- Template JS File -->
+  <script src="{% static 'assets/js/scripts.js' %}"></script>
+  <!-- Custom JS File -->
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+
+
+<!-- datatables.html  21 Nov 2019 03:55:25 GMT -->
+</html>
 {% endblock  %}
-
-
-
-
-
-
-
-
-
-
-
-
-

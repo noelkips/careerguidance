@@ -1,5 +1,46 @@
 {% extends 'base.html' %}
 {% block content%}
+
+<section data-bs-version="5.1" class="features4 cid-tmkn3Rbx6V" id="features4-2">
+    
+    <div class="mbr-overlay"></div>
+    <div class="container-fluid">
+        <div class="mbr-section-head">
+            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-1">
+                <strong>Career Types</strong></h4>
+            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7"><em>Right career better life</em></h5>
+        </div>
+        <div class="row mt-4">
+            {% for career in categories %}
+            <div class="item features-image сol-12 col-md-6 col-lg-4 active">
+                <div class="item-wrapper">
+               
+                    <div class="item-content">
+                            
+                            
+                        <h1 class="mbr-text mbr-fonts-style mt-3 display-4">{{career.name}}</h1>
+                    </div>
+                        <div class="item-content">
+                            
+                            
+                            <p class="mbr-text mbr-fonts-style mt-3 display-7">{{career.description |truncatechars:175}}</p>
+                        </div>
+                        <div class="mbr-section-btn item-footer mt-2">
+                            <a href="{% url 'course:career_type_detail' pk=career.pk %}" class="btn item-btn btn-secondary display-7">Read more &gt;&gt;</a>
+                            <a href="{% url 'course:categories' pk=career.pk %}" class="btn item-btn btn-secondary display-7" >See Courses &gt;&gt;</a>
+                        </div>
+                </div>
+                </div> {% endfor%}
+            </div>
+           
+           
+          
+            
+
+        </div>
+    </div>
+</section>
+
 <section data-bs-version="5.1" class="info4 cid-tohX8Vc78y mbr-parallax-background" id="info4-s">
     
 
@@ -22,42 +63,5 @@
     </div>
 </section>
 
-<section data-bs-version="5.1" class="features4 cid-tmkn3Rbx6V" id="features4-2">
-    
-    <div class="mbr-overlay"></div>
-    <div class="container-fluid">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-1">
-                <strong>Career Types</strong></h4>
-            <h5 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-2 display-7"><em>Right career better life</em></h5>
-        </div>
-        <div class="row mt-4">
-            {% for career in career_types %}
-            <div class="item features-image сol-12 col-md-6 col-lg-4 active">
-                <div class="item-wrapper">
-               
-                    <div class="item-content">
-                            
-                            
-                        <h1 class="mbr-text mbr-fonts-style mt-3 display-4">{{career.name}}</h1>
-                    </div>
-                        <div class="item-content">
-                            
-                            
-                            <p class="mbr-text mbr-fonts-style mt-3 display-7">{{career.description |truncatechars:175}}</p>
-                        </div>
-                        <div class="mbr-section-btn item-footer mt-2"><a href="{% url 'course:career_type_detail' pk=career.pk %}" class="btn item-btn btn-secondary display-7" target="_blank">Read more &gt;&gt;</a>
-                        </div>
-                </div>
-                </div> {% endfor%}
-            </div>
-           
-           
-          
-            
-
-        </div>
-    </div>
-</section>
 
 {%endblock content%}

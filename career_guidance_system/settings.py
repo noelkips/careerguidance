@@ -24,36 +24,32 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'k^$3hg2uu209g^9kkst6utqv+1fab7#mrd*29oqcq41)s%pogl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-ALLOWED_HOSTS = ['careerguidancekenya.herokuapp.com', '127.0.0.1']
+DEBUG =True
+ALLOWED_HOSTS = ['*']
 
 
 INSTALLED_APPS = [
     # local
-    'users.apps.UsersConfig',
     'courses.apps.CoursesConfig',
     'mpesa.apps.MpesaConfig',
 
-    # 3rd Party
-    # 'crispy_forms',
-    'django_filters',
 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic',  # to allow static files in production
+    # 'whitenoise.runserver_nostatic',  # to allow static files in production
     'django.contrib.staticfiles',
 ]
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
-AUTH_USER_MODEL = 'users.CustomUser'
+# AUTH_USER_MODEL = 'users.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # to allow static files in production
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',  # to allow static files in production
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -125,14 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # to allow static files in production
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # to allow static files in production
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-LOGIN_REDIRECT_URL = 'course:courses'
-LOGOUT_REDIRECT_URL = 'login'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

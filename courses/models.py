@@ -5,7 +5,7 @@ from unicodedata import name
 from django.db import models
 import os
 from django.conf import settings
-
+from django.template.defaultfilters import slugify
 from django.urls import reverse
 
 
@@ -27,15 +27,27 @@ class University(models.Model):
     def get_absolute_url(self):
         return reverse('course:university_detail', args=[str(self.pk)])
 
+def category_image(instance, filename):
+    upload_to = 'static/images/'
+    ext = filename.split('.')[-1]
+    filename = 'category_pics/{}.{}'.format(instance.name, ext)
+    return os.path.join(upload_to, filename)
 
 class Category(models.Model):
     name = models.CharField(max_length=30)
     category_no = models.AutoField(primary_key=True)
     updated_at = models.DateTimeField(auto_now_add=True, null=False, blank=False)
+    slug = models.SlugField(max_length=50,
+                            help_text='value that help users find course', null=True, blank=True)
+    image = models.ImageField(upload_to=category_image, blank=True, verbose_name='category image')
     description = models.TextField()
 
     def __str__(self):
         return self.name[:50]
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 
 class Course(models.Model):
@@ -55,6 +67,10 @@ class Course(models.Model):
     def __str__(self):
         return self.name[:50]
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
     def get_absolute_url(self):
         return reverse('course:course_detail', args=[str(self.course_no)])
 
@@ -64,7 +80,13 @@ class Entry(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     cut_off = models.FloatField(null=False, default=0.0, )
     cut_off_max = models.FloatField(null=False, default=12.0, )
+    slug = models.SlugField(null=True, blank=True)
     university = models.ForeignKey(University, on_delete=models.CASCADE)
 
     def get_absolute_url(self):
         return reverse('course:entry_detail', args=[str(self.pk)])
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.entry_no)
+        super().save(*args, **kwargs)
+

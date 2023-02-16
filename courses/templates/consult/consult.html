@@ -1,28 +1,51 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<style>
+    .cid-toZr6B7gj1{
+        background-color: rgba(37, 202, 220, 0.811);
+        margin: 0;
 
-<div class="query-page query-results course">
-<h1 class="course-name"> we recommend the following careers based on your personality</h1>
-    <hr class="hr-style">
-<h1 class="text-blue">{{message}}</h1><br>
-<h1 class="course-name">we recommend the following courses in {{message}} category for you</h1>
-    <hr class="hr-style">
-    <ul style="padding: 30px;">
-        <li><h1>{{course_1}}</h1></li><br>
-        <li><h1>{{course_2}}</h1></li><br>
-        <li><h1>{{course_3}}</h1></li><br>
-        <li><h1>{{course_4}}</h1></li><br>
-        <li><h1>{{course_5}}</h1></li><br>
-        <li><h1>{{course_6}}</h1></li><br>
-        <li><h1>{{course_7}}</h1></li><br>
-        <li><h1>{{course_8}}</h1></li><br>
-        <li><h1>{{course_9}}</h1></li><br>
-        <li><h1>{{course_10}}</h1></li><br>
+    }
+    .display-7 h1 a{
+        color: rgb(164, 28, 13);
+    }
+</style>
 
-    </ul>
 
-</div>
+<section data-bs-version="5.1" class="content8 cid-toZr6B7gj1" id="content8-v">
+    
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="counter-container col-md-12 col-lg-10">
+                <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5">
+                    You Personality Type: {{career_type}} 
+                </h4><hr>
+                <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5">
+                    we recommend the following careers based on your personality
+                </h4>
+                <div class="mbr-text mbr-fonts-style display-7">
+                    <ul>
+                        <li>{{course_1}}</li>
+                        <li>{{course_2}}</li>
+                        <li>{{course_3}}</li>
+                        <li>{{course_4}}</li>
+                        <li>{{course_5}}</li>
+                        <li>{{course_6}}</li>
+                        <li>{{course_7}}</li>
+                        <li>{{course_8}}</li>
+                        <li>{{course_9}}</li>
+                        <li>{{course_10}}</li>
+                    </ul>
+                    <br>
+                    <h1><a href="">Find out more About {{career_type}}</a></h1>
+                    <br><br>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 {% endblock  %}
 

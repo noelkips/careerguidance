@@ -3,109 +3,179 @@
 
 
 {% block content %}
-<div class="query-page-background">
-<div class="query-page">
-    <form action="consult" class="course-name">
-  <label for="ques1" class="text-white">1. Which of the following best describe you (are you) ? </label>
-                <div  class="form-control" id="ques1">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_one" value ="1" checked>Practical, athletic, straightforward, a nature lover, curious about the physical world</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_one" value ="2">Inquisitive, analytical, scientific, observant, logical, precise</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_one" value ="3">Creative, intuitive, imaginative, innovative, sensitive, an individualist</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_one" value ="4">Friendly, helpful, idealistic, insightful about people, outgoing with others, understanding</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_one" value ="5">Self-confident, assertive, sociable, persuasive, enthusiastic, energetic</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_one" value ="6">Organized, accurate with details and numbers,  methodical, conscientious about facts, efficient</h3><br>
-                </div ><br>
-                <label for="ques2" class="text-white">2. Which of the following best describe you (can you) ? </label>
-                <div  class="form-control" id="ques2">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_two" value="1" checked>Fix electrical things, solve mechanical problems, pitch a tent, play a sport, read a blueprint, operate tools and machinery</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_two" value="2">Think abstractly, solve math problems, understand physics theories, do complex calculations, use a microscope, interpret formulas</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_two" value="3">Sketch, draw, paint, use intuition, play a musical instrument, write stories, poetry, music, develop new ideas</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_two" value="4">Teach or train others, express your feelings clearly, lead a group discussion, mediate disputes, work well in groups or teams</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_two" value="5">Initiate projects, convince people to do things your way, sell things or promote ideas</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_two" value="6">Work well within an authority system or organization, write reports, keep accurate records, use a computer terminal</h3><br>
-                </div ><br>
-                <label for="ques3" class="text-white">3. Which of the following best describe you (do you like )</label>
-                <div  class="form-control" id="ques3">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_three" value="1" checked>Work outdoors, be physically active, work with your hands, build things</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_three" value="2">Explore ideas, use computers, work independently, perform lab experiments, read scientific or technical, analyze data</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_three" value="3">Solve problems in original ways, read fiction, plays, poetry, act, entertain,  take photographs</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_three" value="4">Help people with their problems, lead groups, use communication skills, teach or train others, provide support</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_three" value="5">Make decisions affecting others, give speeches or talks, debate, take risks, organize and lead others</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_three" value="6">Follow defined procedures, make charts, tables and graphs, work with numbers, classify and organize information</h3><br>
-                </div ><br>
-                <label for="ques4" class="text-white">4.Which one describe your hobby/ hobbies ?</label>
-                <div  class="form-control" id="ques4">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_four" value="1" checked>Riding, gardening, playing, reading inventions, exploration of new things</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_four" value="2">Solving puzzles, adventuring, reading about facts, watching tutorials, exploring</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_four" value="3">Acting, dancing, chatting, watching, drawing, designing things</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_four" value="4">Teaching, reading, guiding others, travelling</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_four" value="5">Reading business related books, watching business related programs, politics, walking</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_four" value="6">Party planning, hosting, reading accounts related articles</h3><br>
-                </div ><br>
-                <label for="ques5" class="text-white">5. Which one of the following best describe the kind of job you like?</label>
-                <div  class="form-control" id="ques5">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_five" value="1" checked>Engineer, technician, surveyor, equipment operator, pilot, driver</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_five" value="2">Any job relating to computing, data analyst,actuarial consultant, network operation related jobs, risk manager, archaeologist</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_five" value="3">Actor/ actress, author, artist, musician, designer, wedding planner</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_five" value="4">Teaching, counselor, public health officer, coach, librarian, Nurse</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_five" value="5">Consultant, politician, procurement officer, project manager</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_five" value="6">Accountant, bank manager, auditor, finance manager, police, receptionist, office manager</h3><br>
-                </div ><br>
-                <label for="ques6" class="text-white">6.Which is the best subject you like? </label>
-                <div  class="form-control" id="ques6">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="1" checked>Maths</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="2">English</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="3">Kiswahili</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="4">Chemistry</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="5">Physics</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="6">Biology</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="7">Religion</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="8">Business studies</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="9">Kiswahili</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="10">History and government</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="11">Geography</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="12">Computer studies</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="13">Home science</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_six" value="14">Music</h3><br>
-                </div ><br>
-                <label for="ques7" class="text-white">7.Which second best subject you like? </label>
-                <div  class="form-control" id="ques7">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="1" checked>Maths</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="2">English</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="3">Kiswahili</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="4">Chemistry</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="5">Physics</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="6">Biology</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="7">Religion</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="8">Business studies</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="9">Kiswahili</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="10">History and government</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="11">Geography</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="12">Computer studies</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="13">Home science</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_seven" value="14">Music</h3><br>
-                </div ><br>
-                <label for="ques8" class="text-white">8.Which other subject do you like? </label>
-                <div  class="form-control" id="ques8">
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="1" checked>Maths</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="2">English</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="3">Kiswahili</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="4">Chemistry</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="5">Physics</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="6">Biology</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="7">Religion</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="8">Business studies</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="9">Kiswahili</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="10">History and government</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="11">Geography</h3><br>
-                     <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="12">Computer studies</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="13">Home science</h3><br>
-                    <h3 class="course-name"><input class="big-radio" type="radio" name="question_eight" value="14">Music</h3><br>
-                </div ><br>
-             <a ><input type="submit" value="Submit"></a>
-</form>
-</div>
-</div>
+<style>
+     .question:hover{
+          color: rgb(50, 32, 211);
+          padding: 10px;
+          font-size: 30px;
+     }
+     .big-radio{
+          height: 30px;
+          padding: 40px;
+          width: 30px;
+          border-radius: 50%;
+     }
+</style>
+<section data-bs-version="5.1" class="content8 cid-toZr6B7gj1" id="content8-v">
+    
+     <div class="container">
+         <div class="row">
+             <div class="counter-container col-md-12 col-lg-10">
+                 <div class="query-page">
+     <form action="consult">
+     <label for="ques1">
+          <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+               Which of the following best describe you (are you) ?
+           </h4>
+                    <div  class="form-control" id="ques1">
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_one" value ="1" checked>Practical, athletic, straightforward, a nature lover, curious about the physical world</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_one" value ="2">Inquisitive, analytical, scientific, observant, logical, precise</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_one" value ="3">Creative, intuitive, imaginative, innovative, sensitive, an individualist</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_one" value ="4">Friendly, helpful, idealistic, insightful about people, outgoing with others, understanding</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_one" value ="5">Self-confident, assertive, sociable, persuasive, enthusiastic, energetic</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_one" value ="6">Organized, accurate with details and numbers,  methodical, conscientious about facts, efficient</h3><br>
+                    </div ><br>
+                    <label for="ques2">
+                         <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                              Which of the following best describe you (can you) ?
+                          </h4> </label>
+                    <div  class="form-control" id="ques2">
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_two" value="1" checked>Fix electrical things, solve mechanical problems, pitch a tent, play a sport, read a blueprint, operate tools and machinery</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_two" value="2">Think abstractly, solve math problems, understand physics theories, do complex calculations, use a microscope, interpret formulas</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_two" value="3">Sketch, draw, paint, use intuition, play a musical instrument, write stories, poetry, music, develop new ideas</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_two" value="4">Teach or train others, express your feelings clearly, lead a group discussion, mediate disputes, work well in groups or teams</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_two" value="5">Initiate projects, convince people to do things your way, sell things or promote ideas</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_two" value="6">Work well within an authority system or organization, write reports, keep accurate records, use a computer terminal</h3><br>
+                    </div ><br>
+                    <label for="ques3">
+                         <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                         Which of the following best describe you (do you like ) ?
+                        </h4></label>
+                    <div  class="form-control" id="ques3">
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_three" value="1" checked>Work outdoors, be physically active, work with your hands, build things</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_three" value="2">Explore ideas, use computers, work independently, perform lab experiments, read scientific or technical, analyze data</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_three" value="3">Solve problems in original ways, read fiction, plays, poetry, act, entertain,  take photographs</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_three" value="4">Help people with their problems, lead groups, use communication skills, teach or train others, provide support</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_three" value="5">Make decisions affecting others, give speeches or talks, debate, take risks, organize and lead others</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_three" value="6">Follow defined procedures, make charts, tables and graphs, work with numbers, classify and organize information</h3><br>
+                    </div ><br>
+                    <label for="ques4">
+                         <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                              Which one describe your hobby/ hobbies ?</h4></label>
+                    <div  class="form-control" id="ques4">
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_four" value="1" checked>Riding, gardening, playing, reading inventions, exploration of new things</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_four" value="2">Solving puzzles, adventuring, reading about facts, watching tutorials, exploring</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_four" value="3">Acting, dancing, chatting, watching, drawing, designing things</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_four" value="4">Teaching, reading, guiding others, travelling</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_four" value="5">Reading business related books, watching business related programs, politics, walking</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_four" value="6">Party planning, hosting, reading accounts related articles</h3><br>
+                    </div ><br>
+                    <label for="ques5"> <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                         Which one of the following best describe the kind of job you like?</h4>
+                    </label>
+                    <div  class="form-control" id="ques5">
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_five" value="1" checked>Engineer, technician, surveyor, equipment operator, pilot, driver</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_five" value="2">Any job relating to computing, data analyst,actuarial consultant, network operation related jobs, risk manager, archaeologist</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_five" value="3">Actor/ actress, author, artist, musician, designer, wedding planner</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_five" value="4">Teaching, counselor, public health officer, coach, librarian, Nurse</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_five" value="5">Consultant, politician, procurement officer, project manager</h3><br>
+                         <h3 class="question"><input class="big-radio" type="radio" name="question_five" value="6">Accountant, bank manager, auditor, finance manager, police, receptionist, office manager</h3><br>
+                    </div ><br>
+                    <label for="ques6"> <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                         Which is the best subject you like?</h4> </label>
+                    <div  class="form-control" id="ques6">
+                         <div class="row">
+                              <div class="col-12 col-md-6 col-lg-3">
+                                    <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="1" checked>Maths</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="2">English</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="3">Kiswahili</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="4">Chemistry</h3><br>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="5">Physics</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="6">Biology</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="7">Religion</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="8">Business studies</h3><br>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                    <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="9">Kiswahili</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="10">History and government</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="11">Geography</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="12">Computer studies</h3><br>
+     
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="13">Home science</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_six" value="14">Music</h3><br>
+                             </div>
+                         </div>
+                    </div ><br>
+                    <label for="ques7"> <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                         Which second best subject you like? </h4></label>
+                    <div  class="form-control" id="ques7">
+                         <div class="row">
+                              <div class="col-12 col-md-6 col-lg-3">
+                                    <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="1" checked>Maths</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="2">English</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="3">Kiswahili</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="4">Chemistry</h3><br>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="5">Physics</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="6">Biology</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="7">Religion</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="8">Business studies</h3><br>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                    <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="9">Kiswahili</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="10">History and government</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="11">Geography</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="12">Computer studies</h3><br>
+     
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="13">Home science</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_seven" value="14">Music</h3><br>
+                             </div>
+                         </div>
+                    </div ><br>
+                    <label for="ques8"> <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5" style="color: red;">
+                         Which other subject do you like?</h4> </label>
+                    <div  class="form-control" id="ques8">
+                         <div class="row">
+                              <div class="col-12 col-md-6 col-lg-3">
+                                    <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="1" checked>Maths</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="2">English</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="3">Kiswahili</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="4">Chemistry</h3><br>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="5">Physics</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="6">Biology</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="7">Religion</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="8">Business studies</h3><br>
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                    <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="9">Kiswahili</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="10">History and government</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="11">Geography</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="12">Computer studies</h3><br>
+     
+                              </div>
+                              <div class="col-12 col-md-6 col-lg-3">
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="13">Home science</h3><br>
+                                   <h3 class="question"><input class="big-radio" type="radio" name="question_eight" value="14">Music</h3><br>
+                             </div>
+                         </div>
+                    </div ><br>
+               <a ><input class="btn btn-secondary" type="submit" value="Know my career type"></a>
+     </form>
+     </div>
+             </div>
+         </div>
+     </div>
+ </section>
+
 
 
 {% endblock %}

@@ -17,7 +17,7 @@ class CourseAdmin(admin.ModelAdmin):
 
 class EntryAdmin(admin.ModelAdmin):
     list_display = ('entry_no', 'course', 'cut_off', 'university')
-    # search_fields = ('course','university')
+    search_fields = ('course','university')
 
 
 admin.site.register(Course, CourseAdmin)

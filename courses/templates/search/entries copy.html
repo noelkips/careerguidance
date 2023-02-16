@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="row ">
+    <li>
+        <div class="login-logout-animate">
+            <marquee>
+             {% if request.user.is_superuser %}
+                <p>Hi  {{request.user}}[admin]  </p>
+             {%elif request.user.is_authenticated %}
+                <p>Hi  {{request.user}}</p>
+            {%else%}
+                <p>you are not logged in</p>
+             {%endif%}
+
+            </marquee>
+        </div>
+
+    </li>
+     {% if request.user.is_superuser %}
+    <div class="cat-details donate admin-add">
+        <a class="small-font" href="{% url 'course:course_new' %}">+Add Course</a>
+    </div>
+    {%else%}
+    <div class="cat-details donate admin-add">
+        <a class="small-font" href="{% url 'personalInfo' %}" target="_blank">Donate</a>
+    </div>
+    {% endif%}
+
+    {% for course in entries %}
+    <li class="col-auto courses">
+        <div class ="card bg-white mb-3 sm-3" style="width:339px;">
+            {% if course.image %}
+            <a href="{% url 'course:course_detail' course.pk %}">
+                <img class="card-img-top" src="{{ course.image.url }}" alt="course image" height="250px" width="100%">
+            </a>
+            {% else %}
+                <p></p>
+            {% endif %}
+            <h2 class="category-name-cap course-name">{{course.name}}</h2>
+            <p class="card-text course-university"> Category: {{course.category}}</p>
+            <a href="{% url 'course:course_detail' course.pk %}" class="btn btn-primary">see more</a>
+             {% if request.user.is_superuser %}
+            <button class="btn btn-success">
+                <a  class="text-white" href="{% url 'course:course_edit' course.pk %}">+ Edit course</a>
+            </button>
+            <button class="btn btn-danger">
+                <a  class="text-white" href="{% url 'course:course_delete' course.pk %}">+ delete course</a>
+            </button>
+            {%endif%}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock  %}
+
+
+
+
+
+
+
+
+
+
+
+
+
