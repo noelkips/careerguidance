@@ -1,23 +1,43 @@
 {% extends 'base.html' %}
-
-{% block content %}
 {% load static%}
-<div class="course-name bg-white about-us">
-    <img src="{% static 'css/images/logo.png' %}" height="370px" width="370px" align="right">
-    <h1>Welcome to Career Edge System</h1><br>
-    <p>we offer free career guidance services based on on's personality and the qualification
-        that will aid one in making the right career choices</p>
-    <br>
-    <p>
-        we are fully online where one can seek the guidance at their convenient time
-    </p>
-    <p>we are working on creating a community where one can interact with a career counselor
-        for further guidance
-    </p>
+{% block content %}
 
-</div>
 
-{% endblock  %}
+  <!-- ======= About Us Section ======= -->
+  <section id="about" class="about">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2 style="color: #e45947;;">About Us</h2>
+      </div>
+
+      <div class="row content">
+        <div class="col-lg-6">
+          <h3>
+            We help students and the general public to:</h3>
+          <ul>
+            <li><i class="ri-check-double-line"></i> know their career types</li>
+            <li><i class="ri-check-double-line"></i> know the best careers based on their subject interest</li>
+            <li><i class="ri-check-double-line"></i> View all universities at a glance</li>
+            <li><i class="ri-check-double-line"></i> search specific course, university or course cut off</li>
+          </ul>
+        </div>
+        <div class="col-lg-6 pt-4 pt-lg-0">
+            we are working on creating a community where one can interact with a career counselor
+            for further guidance.
+            We help students to find the right career based on their personalities, especially
+            those in transition between secondary and university.We do this using the RIASEC model that was proposed by
+            Holland 
+          </p>
+          <a href="https://en.wikipedia.org/wiki/Holland_Codes" class="btn-learn-more">Learn More</a>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- End About Us Section -->
+
+
+{%endblock content%}
 
 
 

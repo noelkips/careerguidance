@@ -1,20 +1,71 @@
 {% extends 'base.html' %}
-
-{% block content %}
 {% load static%}
-<div class="course-name bg-white about-us">
-    <marquee> <h1>Thanks for considering our systems's services</h1><br></marquee>
-    <img src="{% static 'css/images/logo.png' %}" height="370px" width="370px" align="right">
-    <h1 style="text-decoration: underline;text-transform: uppercase;" class="course-name">contact us though:</h1><br>
-        <ul>
-            <li>EMAIL: careeredge@gmail.com</li><br>
-            <li>Phone: +254719731264</li><br>
-            <li>Twitter: career_99</li><br>
-            <li>Twitter: Facebook: Career Edge</li>
-        </ul>
-</div>
+{% block content %}
 
-{% endblock  %}
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2 style="color: #e45947;">Contact Us</h2>
+        <p style="color: white;">For further assistance or any other concern, Kindly contact us through email or Phone. You can also leave a message below</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-5 d-flex align-items-stretch">
+          <div class="info">
+            <div class="email">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+              <p>noelkipronolangat@gmail.com</p>
+            </div>
+            <div class="phone">
+              <i class="bi bi-phone"></i>
+              <h4>Call:</h4>
+              <p>+254 719 731 264</p>
+            </div>
+            <div class="whatsapp">
+                <i class="bi bi-whatsapp"></i>
+                <h4>Text:</h4>
+                <p>+254 719 731 264</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+          <form action="#" method="post" role="form" class="django-email-form">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" class="form-control" id="name" required>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="name">Your Email</label>
+                <input type="email" class="form-control" name="email" id="email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name">Subject</label>
+              <input type="text" class="form-control" name="subject" id="subject" required>
+            </div>
+            <div class="form-group">
+              <label for="name">Message</label>
+              <textarea class="form-control" name="message" rows="10" required></textarea>
+            </div>
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Section -->
+{%endblock content%}
 
 
 

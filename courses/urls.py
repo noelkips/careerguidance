@@ -4,13 +4,7 @@ from .import knowlege_base
 from .views import (
     CourseDetailView,
     CategoryDetailView,
-    CourseUpdateView,
-    CourseCreateView,
-    CourseDeleteView,
     UniversityDetailView,
-    UniversityCreateView,
-    UniversityUpdateView,
-    UniversityDeleteView,
     EntryDetailView,
     EntryCreateView,
     EntryDeleteView,
@@ -20,6 +14,10 @@ from .views import (
 app_name = 'course'
 urlpatterns = [
     path('', views.index, name="index"),
+    path('about', views.about, name="about"),
+    path('contact', views.contact, name="contact"),
+
+
     path('career-types/<int:pk>/', CategoryDetailView.as_view(), name="career_type_detail"),
     path('career-types/<int:pk>/courses/', views.category_courses, name="categories"),
      path('career-types/<int:pk>/courses/entries/', views.entry_list_view, name='entries'),
@@ -40,11 +38,8 @@ urlpatterns = [
   
 
     path('course/<int:pk>/', CourseDetailView.as_view(), name="course_detail"),
-    path('course/new/', CourseCreateView.as_view(), name='course_new'),
     path('<slug:slug>/', views.CourseListView.as_view(), name='career_course'),
-    path('course/<int:pk>/edit/',CourseUpdateView.as_view(), name='course_edit'),
-    path('course/<int:pk>/delete/',CourseDeleteView.as_view(), name='course_delete'),
-
+  
     path('entries/<int:pk>/',EntryDetailView.as_view(), name="entry_detail"),
     path('entries/new/',EntryCreateView.as_view(), name='entry_new'),
     
@@ -52,9 +47,7 @@ urlpatterns = [
     path('entries/<int:pk>/delete/',EntryDeleteView.as_view(), name='entry_delete'),
 
     path('universities/<int:pk>/', UniversityDetailView.as_view(), name="university_detail"),
-    path('universities/new/', UniversityCreateView.as_view(), name='university_new'),
-    path('universities/<int:pk>/edit/',UniversityUpdateView.as_view(), name='university_edit'),
-    path('universities/<int:pk>/delete/',UniversityDeleteView.as_view(), name='university_delete'),
+    
 
 
     
@@ -64,7 +57,6 @@ urlpatterns = [
     path("consult", knowlege_base.consult, name="consult"),
     path("querying", views.queries, name='querying'),
 
-    path('about', views.about, name="about"),
-    path('contact', views.contact, name="contact"),
+   
 
 ]

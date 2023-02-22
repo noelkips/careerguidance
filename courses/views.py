@@ -120,22 +120,6 @@ class CourseDetailView(DetailView):
     template_name = 'course_detail.html'
 
 
-class CourseCreateView(CreateView):
-    model = Course
-    template_name = 'course_new.html'
-    fields = '__all__'
-
-
-class CourseUpdateView(UpdateView):
-    model = Course
-    template_name = 'course_edit.html'
-    fields = ['name', 'career', 'category', 'first_sub', 'second_sub', 'third_sub', 'fourth_sub']
-
-
-class CourseDeleteView(DeleteView):
-    model = Course
-    template_name = 'course_delete.html'
-    success_url = reverse_lazy('course:courses')
 
 
 class UniversityDetailView(DetailView):
@@ -143,22 +127,6 @@ class UniversityDetailView(DetailView):
     template_name = 'university_detail.html'
 
 
-class UniversityCreateView(CreateView):
-    model = University
-    template_name = 'university_new.html'
-    fields = '__all__'
-
-
-class UniversityUpdateView(UpdateView):
-    model = University
-    template_name = 'university_edit.html'
-    fields = ['name', 'image', 'category', 'location']
-
-
-class UniversityDeleteView(DeleteView):
-    model = University
-    template_name = 'university_delete.html'
-    success_url = reverse_lazy('course:universities')
 
 
 def loginpage(request):

@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     # local
     'courses.apps.CoursesConfig',
-    'mpesa.apps.MpesaConfig',
 
 
     'django.contrib.admin',
