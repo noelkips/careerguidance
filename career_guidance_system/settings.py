@@ -25,7 +25,7 @@ SECRET_KEY = 'k^$3hg2uu209g^9kkst6utqv+1fab7#mrd*29oqcq41)s%pogl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =True
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1:8000/', 'noel99.pythonanywhere.com']
 
 
 INSTALLED_APPS = [
@@ -120,22 +120,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # to allow static files in production
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_URL = 'static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# import socket
-#
-# socket.getaddrinfo('127.0.0.1', 4764)
-#
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'smtp.sendgrid.net'
-# EMAIL_HOST_USER = 'apikey'
-# EMAIL_HOST_PASSWORD = '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'
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
