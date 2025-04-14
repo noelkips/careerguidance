@@ -44,6 +44,8 @@ The **Career Guidance System** is a web-based application built using Django and
    python -m venv venv  
    source venv/bin/activate   # For Linux/macOS  
    venv\Scripts\activate      # For Windows
+
+   or #pipenv shell (Windows) This will create and activate
    ```
 
 3. Install dependencies:  
