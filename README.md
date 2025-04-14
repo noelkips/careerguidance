@@ -34,7 +34,8 @@ The **Career Guidance System** is a web-based application built using Django and
 
 1. Clone the repository:  
    ```
-   git clone https://github.com/yourusername/career-guidance-system.git  
+   
+   git clone  https://github.com/noelkips/careerguidance.git 
    cd career-guidance-system
    ```
 
